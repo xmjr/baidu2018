@@ -1,0 +1,575 @@
+@charset "utf-8";
+
+/* reset */
+@charset "utf-8";
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,a,span,i,em,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+ul {
+	list-style: none;
+}
+
+/* 当获得焦点时，placehoder内容颜色变透明，也就是隐藏 */
+/* WebKit browsers */
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder
+ { color:transparent; }
+
+/* Mozilla Firefox 4 to 18 */
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder { color:transparent; }
+
+/* Mozilla Firefox 19+ */
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder { color:transparent; }
+
+/* Internet Explorer 10+ */
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder { color:transparent; } 
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+	-webkit-transition: all .1s ease-in-out;
+	        transition: all .1s ease-in-out;
+}
+a:hover {
+	text-decoration: none;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* 通用设置 */
+@font-face {
+	font-family: "Montserrat ExtraLight";
+	src: url(../fonts/Montserrat-ExtraLight.ttf);
+}
+@font-face {
+	font-family: "Montserrat Light";
+	src: url(../Montserrat-Light.otf);
+}
+
+body {
+	width: 100%;
+	font-family: "Montserrat ExtraLight",sans-serif;
+}
+
+h1 {
+	padding-top: 200px;
+	padding-bottom: 50px;
+	font-size: 62px;
+	font-weight: normal;
+}
+
+h2 {
+	margin: 80px 0;
+	font-size: 42px;
+	font-weight: 500;
+	line-height: 1.2;
+	text-align: center;
+}
+h3 {
+	margin-bottom: 20px;
+	font-family: "Montserrat Light";
+	font-size: 20px;
+	font-weight: normal;
+}
+
+p {
+	font-size: 16px;
+	color: #141414;
+}
+
+p.big {
+	font-size: 18px;
+	line-height: 1.5;
+}
+p.small {
+	font-family: "Montserrat Light";
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+p.smaller {
+	font-family: "Montserrat Light";
+	font-size: 12px;
+	line-height: 2;
+	letter-spacing: 2px;
+	color: #666;
+}
+
+hr {
+	margin: 0 auto;
+	max-width: 1600px;
+	height: 1px;
+	background: #ddd;
+	border: 0;
+}
+
+.max-box {
+	position: relative;
+	margin: 0 auto;
+	/* 设置最小宽度为.box的宽度，是为了避免浏览器变窄时内容超出容器 */
+	min-width: 1000px;
+	/* 设置最大宽度为背景图的宽度；若直接设置width，则只有当浏览器宽度大于等于1600px时，才能完整显示banner内容，不太友好 */
+	max-width: 1600px;
+	color: #fff;
+}
+
+.min-box {
+	position: relative;
+	margin: 80px auto;
+	width: 900px;
+	color: #000;
+}
+
+.center {
+	text-align: center;
+}
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
+
+/* 第一部分：banner */
+.banner {
+	position: relative;
+	height: 989px;
+	text-align: center;
+	background: url(../images/banner.png) no-repeat center/1600px 990px;
+	transition: all 2s ease-in-out;
+}
+
+.banner:hover {
+	background-size: 1920px 1188px;
+}
+.banner p.span {
+	font-size: 20px;
+	line-height: 1.5;
+	color: #faf1e9; 
+}
+
+.banner .account {
+	margin: 100px auto;
+	width: 900px;
+	height: 250px;
+	border: 1px solid #666;
+}
+
+.banner .account h4 {
+	margin-top: 40px;
+	margin-bottom: 10px;
+	font-family: "Montserrat-Light";
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.5;
+	letter-spacing: 2px;
+}
+
+#sign {
+	margin-top: 40px;
+}
+
+#sign input[type="text"],
+#sign input[type="password"] {
+	width: 290px;
+	height: 50px;
+	margin-right: 30px;
+	padding-left: 20px;
+	font-family: "Montserrat-Light";
+	font-size: 14px;
+	color: #fff;
+	box-sizing: border-box;
+	border: 1px solid #666;
+	background: transparent;
+	outline: none;
+}
+#sign input:not([type="submit"]):focus {
+	border: 1px solid #999;
+	border-radius: 4px;
+}
+
+
+#sign input[type="submit"] {
+	width: 120px;
+	height: 50px;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	box-sizing: border-box;
+	border: 0;
+	background-color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+	outline: none;
+}
+
+#sign input[type="submit"]:hover {
+	color: #fff;
+	background: #ff7f50;
+}
+
+
+/* 第二部分：serit */
+.serit {
+	margin: 0 auto;
+	width: 1000px;
+	height: 600px;
+	padding-top: 100px;
+	color: #000;
+}
+
+.serit h2 {
+	margin-top: 20px;
+}
+
+.serit .box{
+	display: inline-block;
+	padding-left: 70px;
+	width: 380px;
+	height: 150px;
+}
+
+.serit .box:nth-of-type(1) {
+	float: left;
+	background: url(../images/icon_1.png) no-repeat left 15px top 5px;
+}
+
+.serit .box:nth-of-type(2) {
+	float: right;
+	background: url(../images/icon_2.png) no-repeat left 15px top 5px;
+}
+
+.serit .box:nth-of-type(3) {
+	float: left;
+	background: url(../images/icon_3.png) no-repeat left 5px top 5px;
+}
+
+.serit .box:nth-of-type(4) {
+	float: right;
+	background: url(../images/icon_4.png) no-repeat left 5px top 5px;
+}
+
+
+/* 第三部分：data */
+.data {
+	height: 800px;
+	background: url(../images/banner_1_right.png) no-repeat center right,
+				url(../images/banner_1.png) no-repeat center;
+}
+@media screen and (max-width: 1400px) {
+	.data {
+		height: 800px;
+		background: url(../images/banner_1_right.png) no-repeat center right/45%,
+					url(../images/banner_1.png) no-repeat center;
+	}
+}
+
+.data .content {
+	margin: 0 auto;
+	width: 900px;
+	padding-top: 180px;
+}
+
+.data .content .text {
+	width: 400px;
+}
+.data .content h2 {
+	margin: 0;
+	text-align: left;
+	color: #fff;
+}
+.data .content p {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	color: #bbb;
+	word-break: keep-all;
+}
+
+
+.data a {
+	display: inline-block;
+	margin-right: 20px;
+	width: 220px;
+	height: 60px;
+	font-family: "Montserrat-Light";
+	font-size: 12px;
+	line-height: 60px;
+	letter-spacing: 2px;
+	text-align: center;
+	border: 1px solid #666;
+	border-radius: 5px;
+	color: #fff;
+	background: transparent;
+	text-decoration: none;
+}
+.data a:hover {
+	color: #000;
+	background: #fff;
+}
+
+
+/* 第四部分：products */
+.products .flex {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+}
+.products .flex-pack-justify {
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-between;
+    -ms-flex-pack:justify;
+    justify-content:space-between;
+}
+
+.products .flex-product {
+	padding-top: 60px;
+	width: 270px;
+}
+.products .flex-product:nth-of-type(1) {
+	background: url(../images/singletan.png) no-repeat center top;
+}
+
+.products .flex-product:nth-of-type(2) {
+	background: url(../images/hero.png) no-repeat center top;
+}
+
+.products .flex-product:nth-of-type(3) {
+	background: url(../images/pontland.png) no-repeat center top;
+}
+
+.products p {
+	text-align: center;
+	word-break: keep-all;
+}
+
+
+/* 第五部分：introduce */
+
+.introduce {
+	position: relative;
+	padding-top: 40px;
+}
+
+.introduce .box {
+	height: 300px;
+	margin-bottom: 100px;
+}
+
+.introduce img{
+	width: 500px;
+	height: 300px;
+	-webkit-transition: all 0.2s ease-in-out;
+	        transition: all 0.2s ease-in-out;
+}
+.introduce img:hover {
+	transform: scale(1.1);
+}
+
+.introduce .box .text{
+	width: 320px;
+	margin-top: 50%;
+	-webkit-transform: translateY(-50%);
+	    -ms-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+
+/* 第六部分：crew */
+
+.crew {
+	text-align: center;
+}
+
+.crew .person {
+	margin-top: 50px;
+	width: 430px;
+	height: 320px;
+	overflow: hidden;
+	cursor: pointer;
+}
+.crew h2 {
+	margin-bottom: 30px;
+}
+
+.crew .person:nth-of-type(1) {
+	background: url(../images/person_1.png) no-repeat center;
+}
+.crew .person:nth-of-type(2) {
+	background: url(../images/person_2.png) no-repeat center;
+}
+.crew .person:nth-of-type(3) {
+	background: url(../images/person_3.png) no-repeat center;
+}
+.crew .person:nth-of-type(4) {
+	background: url(../images/person_4.png) no-repeat center;
+}
+
+.crew .person .hidden {
+	width: 100%;
+	height: 100%;
+	padding-top: 25%;
+	background: rgba(00,00,00,0.6);
+	-webkit-transition: all 0.5s ease-in-out;
+	        transition: all 0.5s ease-in-out;
+	opacity: 0;
+}
+.crew .person:hover .hidden {
+	opacity: 1;
+}
+.crew .person .hidden h3 {
+	color: #fff;
+}
+.crew .person .hidden p {
+	margin-top: -10px;
+	font-weight: 600;
+	color: #888;
+}
+
+.hidden a {
+	display: inline-block;
+	margin: 30px 10px 0;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid #888;
+	border-radius: 50%;
+}
+.hidden a img {
+	vertical-align: middle;
+}
+.hidden a:hover {
+	background: #000;
+}
+
+
+/* 第七部分：contact */
+
+.contact form {
+	padding: 40px;
+	border: 1px solid #ccc;
+}
+.contact form p {
+	font-family: "Montserrat-Light";
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+.contact input{
+	display: block;
+	margin-top: 30px;
+	padding-left: 20px;
+	width: 360px;
+	height: 40px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	outline: none;
+}
+.contact textarea {
+	display: block;
+	margin-top: 30px;
+	width: 360px;
+	height: 160px;
+	padding-left: 20px;
+	font-size: 14px;
+	line-height: 30px;
+	border: 1px solid #ccc;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	outline: none;
+}
+.contact input:not([type="submit"]):focus,
+.contact textarea:focus{
+	border: 1px solid #999;
+	border-radius: 4px;
+}
+
+.contact input[type="submit"] {
+	color: #000;
+	background: #ccc;
+	-webkit-transition: all 0.4s ease-in-out;
+	        transition: all 0.4s ease-in-out;
+}
+
+.contact input[type="submit"]:hover {
+	color: #fff;
+	background: #000;
+	cursor: pointer;
+}
+
+
+.contact .right .text{
+	width: 320px;
+}
+
+.contact .right .text h2 {
+	margin-bottom: 20px;
+	text-align: left;
+}
+.contact ul {
+	margin-top: 50px;
+}
+.contact ul li {
+	padding-bottom: 20px;
+	padding-left: 40px;
+	font-family: "Montserrat-Light";
+	font-size: 16px;
+}
+.contact ul li:nth-of-type(1) {
+	background: url(../images/icon_8.png) no-repeat left top 5px;
+}
+.contact ul li:nth-of-type(2) {
+	background: url(../images/icon_9.png) no-repeat;
+}
+.contact ul li:nth-of-type(3) {
+	background: url(../images/icon_10.png) no-repeat;
+}
+
+
+/* footer */
+
+footer {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background: #333;
+}
+
+footer.flex {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-ms-flexbox;
+    display:flex;
+}
+footer.flex-pack-justify {
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-around;
+    -ms-flex-pack:justify;
+    justify-content:space-around;
+}
+
+
+.footer {
+	display: inline-block;
+	text-align: left;
+}
+
+
+.footer p {
+	margin-bottom: 30px;
+	font-family: "Montserrat-Light";
+	font-size: 14px;
+	color: #fff;
+}
+.footer a{
+	display: block;
+	margin-bottom: 30px;
+	font-size: 16px;
+	color: #999;
+}
+
